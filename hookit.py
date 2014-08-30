@@ -7,7 +7,7 @@ import datetime
 import hashlib
 import hmac
 
-from flask import Flask, request
+from flask import Flask, request, render_template
 from flask_peewee.db import Database
 from peewee import TextField, DateTimeField, BooleanField
 
