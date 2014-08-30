@@ -19,11 +19,11 @@
     <tbody>
       {% for entry in entries %}
         <tr>
-          <td> {{ entry[0] }} </td>
-          <td> {{ entry[1] }} </td>
-          <td> {{ entry[2] }} </td>
-          <td> {{ entry[3] }} </td>
-          <td> {{ entry[4] }} </td>
+          <td> {{ entry.delivery_code }} </td>
+          <td> {{ entry.full_repo_name }} </td>
+          <td> {{ entry.pusher }} </td>
+          <td> {{ entry.ref }} </td>
+          <td> {{ entry.head }} </td>
         </tr>
       {% endfor %}
     </tbody>
