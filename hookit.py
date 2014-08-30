@@ -14,8 +14,6 @@ def index():
 
 @app.route('/github')
 def github():
-    if request.method != 'POST':
-        return 'Not Allowed', 405
     with open('test', 'w') as f:
         f.write(request.get_json())
     return ':)'
