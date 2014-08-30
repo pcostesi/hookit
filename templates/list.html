@@ -6,5 +6,28 @@
   {% else %}
     <li><em>Unbelievable.  No entries here so far</em> </li>
   {% endfor %}
+  <table class="table">
+    <thead>
+      <tr>
+        <th> Hash <th>
+        <th> algo <th>
+        <th> nose <th>
+        <th> asd <th>
+        <th> aa <th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for entry in entries %}
+        <tr>
+          <td> {{ entry[0] }} </td>
+          <td> {{ entry[1] }} </td>
+          <td> {{ entry[2] }} </td>
+          <td> {{ entry[3] }} </td>
+          <td> {{ entry[4] }} </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
   </ul>
 {% endblock %}
