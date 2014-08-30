@@ -100,6 +100,10 @@ def github():
         event = dispatch_event(event_type, delivery_code, message)
     return 'Ok'
 
+@app.route('/list')
+def view_log():
+	entries = list(PushEvent.select().where(PushEvent.dispatched==False))
+	return render_template('list.html', entries=entries)
 
 
 import logging
