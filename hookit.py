@@ -83,7 +83,7 @@ def dispatch_event(event_type, delivery_code, message):
 
 @app.route('/')
 def index():
-s   return 'Hello from Flask! (%s)' % datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    return 'Hello from Flask! (%s)' % datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
 @app.route('/github', methods=['GET', 'POST'])
 def github():
