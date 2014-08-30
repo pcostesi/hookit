@@ -4,6 +4,7 @@
     <table class="table">
       <thead>
         <tr>
+          <th> </th>
           <th> Delivery Code </th>
           <th> Repository Name </th>
           <th> Pushed by </th>
@@ -14,16 +15,21 @@
       <tbody>
         {% for entry in entries %}
           <tr>
+            <td> RECEIVED </td>
             <td> {{ entry.delivery_code }} </td>
             <td> {{ entry.full_repo_name }} </td>
             <td> {{ entry.pusher }} </td>
             <td> {{ entry.ref }} </td>
             <td> {{ entry.head }} </td>
           </tr>
+          <tr>
+            <td> ACTION </td>
+            <td> </td>
+          </tr>
         {% endfor %}
       </tbody>
     </table>
   {% else %}
     <li><em>Unbelievable.  No entries here so far</em> </li>
-  {% endfor %}
+  {% endif %}
 {% endblock %}
