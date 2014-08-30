@@ -20,6 +20,8 @@ DATABASE = {
 DEBUG = True
 SECRET_KEY = 'this should be a secret key'
 
+GH_SIGNATURE_KEY = 'testkey'
+
 # app
 
 app = Flask(__name__)

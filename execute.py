@@ -14,7 +14,7 @@ def consume_event(event):
 def process_events(events):
     for event in events:
         print event
-        consume_event(event)
+        #consume_event(event)
         #recipe = find_recipe(event)
         #run_recipe(recipe)
 
