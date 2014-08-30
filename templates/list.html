@@ -1,6 +1,42 @@
 {% extends "layout.html" %}
 {% block body %}
   {% if entries %}
+    <h2> Waiting for action </h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th> </th>
+          <th> Delivery Code </th>
+          <th> Repository Name </th>
+          <th> Pushed by </th>
+          <th> Ref </th>
+          <th> Head </th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for entry in entries %}
+          <tr>
+            <td> RECEIVED </td>
+            <td> {{ entry.delivery_code }} </td>
+            <td> {{ entry.full_repo_name }} </td>
+            <td> {{ entry.pusher }} </td>
+            <td> {{ entry.ref }} </td>
+            <td> {{ entry.head }} </td>
+          </tr>
+          <tr>
+            <td> ACTION </td>
+            <td colspan="5"> Send push bullet to @Pablo  </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <li><em>Unbelievable.  No entries here so far</em> </li>
+  {% endif %}
+  <br>
+  <br>
+  {% if dispatched %}
+    <h2> Dispatched </h2>
     <table class="table">
       <thead>
         <tr>
