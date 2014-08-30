@@ -12,7 +12,7 @@ app.debug = True
 def index():
     return 'Hello from Flask! (%s)' % datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
-@app.route('/github')
+@app.route('/github', methods=['GET', 'POST'])
 def github():
     with open('test', 'w') as f:
         f.write(request.get_json())
