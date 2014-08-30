@@ -5,6 +5,8 @@ from datetime import datetime
 from flask import Flask, request
 
 app = Flask(__name__)
+app.debug = True
+
 
 @app.route('/')
 def index():
@@ -13,7 +15,11 @@ def index():
 @app.route('/github')
 def github():
     if request.method != 'POST':
-        return 405
+        return 'Not Allowed', 405
     with open('test', 'w') as f:
         f.write(request.get_json())
     return ':)'
+
+
+if __name__ == '__main__':
+    app.run()
