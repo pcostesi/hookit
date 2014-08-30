@@ -1,33 +1,29 @@
 {% extends "layout.html" %}
 {% block body %}
-  <ul class=entries>
-  {% for entry in entries %}
-    <li>{{ entry }} </li>
+  {% if entries %}
+    <table class="table">
+      <thead>
+        <tr>
+          <th> Delivery Code </th>
+          <th> Repository Name </th>
+          <th> Pushed by </th>
+          <th> Ref </th>
+          <th> Head </th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for entry in entries %}
+          <tr>
+            <td> {{ entry.delivery_code }} </td>
+            <td> {{ entry.full_repo_name }} </td>
+            <td> {{ entry.pusher }} </td>
+            <td> {{ entry.ref }} </td>
+            <td> {{ entry.head }} </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
   {% else %}
     <li><em>Unbelievable.  No entries here so far</em> </li>
   {% endfor %}
-  <table class="table">
-    <thead>
-      <tr>
-        <th> Hash <th>
-        <th> algo <th>
-        <th> nose <th>
-        <th> asd <th>
-        <th> aa <th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for entry in entries %}
-        <tr>
-          <td> {{ entry.delivery_code }} </td>
-          <td> {{ entry.full_repo_name }} </td>
-          <td> {{ entry.pusher }} </td>
-          <td> {{ entry.ref }} </td>
-          <td> {{ entry.head }} </td>
-        </tr>
-      {% endfor %}
-    </tbody>
-  </table>
-
-  </ul>
 {% endblock %}
