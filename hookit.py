@@ -103,7 +103,7 @@ def github():
 @app.route('/list')
 def view_log():
 	entries = list(PushEvent.select().where(PushEvent.dispatched==False))
-	return render_template('list.html', entries=entries)
+	return render_template('list.html', entries=reversed(entries))
 
 
 import logging
