@@ -14,8 +14,12 @@ def index():
 
 @app.route('/github', methods=['GET', 'POST'])
 def github():
-    with open('test', 'w') as f:
-        f.write(request.get_json())
+    if request.method == 'POST':
+        try:
+            with open('test', 'w') as f:
+                f.write(request.get_json())
+        except Exception as e:
+            return str(e)
     return ':)'
 
 
