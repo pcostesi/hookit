@@ -24,7 +24,9 @@ config = {
 def pushbullet_reactor(config, context):
     key = config.get('pb_key')
     pb = PushBullet(key)
-    pb.push_note('Github event detected', msg.format(**context))
+    my_msg = msg.format(**context)
+    pb.push_note('Github event detected', my_msg)
+    print my_msg
 
 
 
