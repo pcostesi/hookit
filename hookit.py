@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from datetime import datetime
-from flask import Flask
+from flask import Flask, request
 
 app = Flask(__name__)
 
